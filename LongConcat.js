@@ -33,9 +33,9 @@ class Solution {
     private boolean canBreak(String s, Set<String> set) 
     {
         if (set.size() == 0) return false; 
-        int n = s.length(); 
+        int n = s.length(); //longest word in the set
         if (n == 0) return false;
-        boolean[] dp = new boolean[n + 1];
+        boolean[] dp = new boolean[n + 1]; //used to add longer words in the set
         dp[0] = true;
         
         for (int i = 1; i <= n; i++) {
