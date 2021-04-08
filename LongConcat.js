@@ -8,10 +8,12 @@ npm install --save-dev typescript
 #include <iterator>
 
 class Solution {
-    public List<String> words(String[] words) // {
-        List<String> res = new ArrayList<>();
-        Set<String> set = new HashSet<>();
-        for (String s : words) {
+    public List<String> words(String[] words) //used to call result 
+    {
+        List<String> res = new ArrayList<>(); //set the string
+        Set<String> set = new HashSet<>(); //set new hashset
+        for (String s : words) //set string to words 
+        {
             set.add(s);
         }
         for (String s: words) {
@@ -21,16 +23,17 @@ class Solution {
                 res.add(s);
             }
             
-            set.add(s);
+            set.add(s); //adds words to the set
         }
         
         return res;
         
     }
     
-    private boolean canBreak(String s, Set<String> set) {
-        if (set.size() == 0) return false;
-        int n = s.length();
+    private boolean canBreak(String s, Set<String> set) 
+    {
+        if (set.size() == 0) return false; 
+        int n = s.length(); 
         if (n == 0) return false;
         boolean[] dp = new boolean[n + 1];
         dp[0] = true;
@@ -39,7 +42,7 @@ class Solution {
             for (int j = 0; j < i; j++) {
                 if (!dp[j]) continue;
             if (set.contains(s.substring(j, i)))  {
-                dp[i] = true;
+                dp[i] = true; //sets new i value to continue adding words
                 break;
             }
         }
